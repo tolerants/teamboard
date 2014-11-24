@@ -1,0 +1,1 @@
+var teamboardApp = angular.module('teamboardApp', []);
