@@ -1,23 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="teamboardApp">
 
-<head ng-app="teamboardApp">
+<head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Teamboard">
 
     <title>Teamboard</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="semantic/css/semantic.css">
     <link rel="stylesheet" href="styles/styles.css"/>
 
-    <script src="semantic/javascript/semantic.js"></script>
-    <script src="semantic/javascript/angular.js"></script>
+    <script src="scripts/angular.js"></script>
     <script src="scripts/app.js"></script>
 
 </head>
 
 <body>
-
+    <table class="ui table" ng-controller="teamviewCtrl">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Position</th>
+            </tr>
+        </thead>
+        <tr ng-repeat="member in members">
+            <td><img ng-src="{{member.photo}}" height="100" alt=""/></td>
+            <td>{{member.firstName}}</td>
+            <td>{{member.lastName}}</td>
+            <td>{{member.position}}</td>
+        </tr>
+    </table>
 </body>
 </html>
